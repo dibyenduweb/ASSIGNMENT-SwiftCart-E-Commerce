@@ -1,11 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - SwiftCart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">SwiftCart</div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html" class="active">Products</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <h2 class="section-title">Our Products</h2>
+
+        <!-- Category Filter -->
+        <div class="category-filter" id="categoryFilter">
+          <button class="filter-btn active" data-category="all">All</button>
+          <!-- Categories will be loaded dynamically -->
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-main">
+            <div class="footer-brand">
+              <h3>SwiftCart</h3>
+              <p>
+                Your one-stop shop for all your fashion and lifestyle needs.
+                Quality products, fast delivery, and excellent support.
+              </p>
+            </div>
+
+            <div class="footer-links-group">
+              <div class="footer-links-col">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="product.html">Products</a></li>
+                  <li><a href="index.html#about">About</a></li>
+                  <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-links-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                  <li><a href="#faq">FAQ</a></li>
+                  <li><a href="#shipping">Shipping</a></li>
+                  <li><a href="#returns">Returns</a></li>
+                  <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-newsletter">
+                <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
+                <p>
+                  The latest news, articles, and resources, sent to your inbox
+                  weekly.
+                </p>
+                <form class="footer-newsletter-form" id="footerNewsletterForm">
+                  <input type="email" placeholder="Enter your email" required />
+                  <button type="submit" class="btn btn-primary">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; 2025 SwiftCart, Inc. All rights reserved.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-sidebar-header">
+        <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+        <button class="cart-close" id="cartClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be inserted here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="cart-total-price" id="cartTotalPrice">$0.00</span>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="checkout()">
+          <i class="fas fa-credit-card"></i> Checkout
+        </button>
+      </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Details Modal -->
+    <div class="modal" id="productModal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <div class="modal-body" id="modalBody">
+          <!-- Product details will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
