@@ -1,4 +1,6 @@
-# JavaScript questions and answers
+# JavaScript questions and answers.
+
+----
 
 ## 1. Difference Between null and undefined
 
